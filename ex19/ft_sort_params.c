@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <unistd.h>
 
 //void	ft_sort_params(int argc, char **argv);
 void    ft_print_args(int argc, char **argv);
@@ -33,7 +32,7 @@ int	main(int argc, char **argv)
 	char	*temp;
 
 	i = 1;
-	temp = malloc(255 * siseof(char));
+	temp = malloc(255 * siseof(char));		//no puc utilitzar malloc
 	while(i < argc)
 	{
 		if(*argv[i] > *argv[i + 1])
