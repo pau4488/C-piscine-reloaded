@@ -10,49 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-//void	ft_sort_params(int argc, char **argv);
-void    ft_print_args(int argc, char **argv);
-int	ft_strlen(char *str);
+void	ft_print_args(int argc, char **argv);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
 int	main(int argc, char **argv)
 {
-	char**  str = (char**)malloc(3 * sizeof(char*));
-	str[0] = "Hola";
-	str[1] = "Mundo";
-
-	ft_print_args(argc, argv);
-	return(0);
-}
-
-/*void    ft_sort_params(int argc, char **argv)
-{
-	int	i;
+	int		i;
+	int		j;
 	char	*temp;
 
-	i = 1;
-	temp = malloc(255 * siseof(char));		//no puc utilitzar malloc
-	while(i < argc)
+	i = 0;
+	while (i < argc)
 	{
-		if(*argv[i] > *argv[i + 1])
+		j = 0;
+		while (j < argc)
 		{
-			temp = *artv[i];
-			*argv[i] = *argv[i + 1];
-			*argv[i + 1] = temp;
+			if (ft_strcmp(argv[i], argv[j]) < 0)
+			{
+				temp = argv[i];
+				argv[i] = argv[j];
+				argv[j] = temp;
+			}
+			j++;
 		}
 		i++;
 	}
-}*/
+	ft_print_args(argc, argv);
+	return (0);
+}
 
-void    ft_print_args(int argc, char **argv)
+void	ft_print_args(int argc, char **argv)
 {
 	int	i;
 	int	len;
 
 	i = 1;
 	len = 0;
-	while(i < argc)
+	while (i < argc)
 	{
 		len = ft_strlen(argv[i]);
 		write(1, argv[i++], len);
@@ -65,10 +62,20 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while(*str)
+	while (*str)
 	{
 		str++;
 		i++;
 	}
-	return(i);
+	return (i);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		i++;
+	return (s1[i] - s2[i]);
 }
