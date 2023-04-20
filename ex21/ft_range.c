@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pbrossa- <pbrossa-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/13 18:34:05 by marvin            #+#    #+#             */
-/*   Updated: 2023/04/13 18:34:05 by marvin           ###   ########.fr       */
+/*   Created: 2023/04/13 23:12:33 by pbrossa-          #+#    #+#             */
+/*   Updated: 2023/04/13 23:12:33 by pbrossa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int	*ft_range(int min, int max)
 {
@@ -19,9 +18,9 @@ int	*ft_range(int min, int max)
 	int	i;
 
 	i = 0;
-	arr = malloc((max - 1) * sizeof(int));
+	arr = malloc((max - min) * sizeof(int));
 	if (min >= max)
-		return(NULL);
+		return (NULL);
 	while (min < max)
 	{
 		arr[i] = min;
@@ -30,4 +29,3 @@ int	*ft_range(int min, int max)
 	}
 	return (arr);
 }
-
