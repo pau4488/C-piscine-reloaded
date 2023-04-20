@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int lenght, void(*f)(int))
+#include <unistd.h>
+
+void	ft_foreach(int *tab, int lenght, void (*f)(int))
 {
 	int	i;
 

@@ -17,11 +17,11 @@ int	ft_count_if(char **tab, int (*f)(char*))
 
 	i = 0;
 	nb = 0;
-	while(tab[i])
+	while (tab[i])
 	{
-		if(f(tab[i][0]))
+		if (f(tab[i][0]))
 			nb++;
 		i++;
 	}
-	return(nb);
+	return (nb);
 }
